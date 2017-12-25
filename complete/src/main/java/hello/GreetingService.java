@@ -7,4 +7,8 @@ public class GreetingService {
     public String greet() {
         return "Hello World";
     }
+
+    public String sayHello() {
+        return "hello";
+    }
 }

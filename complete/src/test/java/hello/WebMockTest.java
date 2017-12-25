@@ -27,7 +27,11 @@ public class WebMockTest {
 
     @Test
     public void greetingShouldReturnMessageFromService() throws Exception {
+
+        // 当调用了 service.greet() 返回 hello Mock, 判断我们这个方法是否被调用了
         when(service.greet()).thenReturn("Hello Mock");
+        when(service.sayHello()).thenReturn("say Hello ");
+
         this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello Mock")));
     }
